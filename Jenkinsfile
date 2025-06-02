@@ -35,10 +35,10 @@ pipeline {
         )]) {
           script {
             echo "📦 Pushing image to DockerHub..."
-            sh """
+            sh '''
               echo "$PASS" | docker login -u "$USER" --password-stdin
               docker push ${IMAGE}:${TAG}
-            """
+            '''
           }
         }
       }
